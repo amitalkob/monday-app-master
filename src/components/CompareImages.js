@@ -60,15 +60,14 @@ const CompareImages = (props) => {
 
   return (
     <div className="compare-container">
+      <p></p>
       <p className="identity-title">Identity Level</p>
-      <div className="identity-num">{`${
-        100.0 - result.misMatchPercentage
-      }%`}</div>
+      <p className="identity-num">{`${100.0 - result.misMatchPercentage}%`}</p>
       {opacityDiv}
       <Rnd
         default={{
           x: 0,
-          y: 100,
+          y: 101,
         }}
         bounds="parent"
         dragAxis="none"
