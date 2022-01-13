@@ -1,20 +1,54 @@
 .app-container {
-  height: 1330px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  .app {
+    height: 1330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .title {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 140%;
-    text-align: center;
-    letter-spacing: -1px;
-    margin-top: 56px;
-    margin-bottom: 38px;
+    .title {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 140%;
+      text-align: center;
+      letter-spacing: -1px;
+      margin-top: 56px;
+      margin-bottom: 38px;
+    }
+
+    %compare-button {
+      position: absolute;
+      width: 486px;
+      height: 64px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 153.5%;
+      text-align: center;
+      margin-top: 388px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .compare-button-dis {
+      @extend %compare-button;
+      background-color: #f5f6f9;
+      color: #bcbdc6;
+    }
+
+    .compare-button-en {
+      @extend %compare-button;
+      background-color: #0073ea;
+      color: white;
+
+      &:hover {
+        background-color: #0060b9;
+      }
+    }
   }
 
-  %compare-button {
+  .reset-button {
     position: absolute;
     width: 486px;
     height: 64px;
@@ -22,35 +56,14 @@
     font-size: 24px;
     line-height: 153.5%;
     text-align: center;
-    margin-top: 522px;
+    margin-top: 1200px;
     border: none;
-    border-radius: 4px;
-  }
-
-  .compare-button-dis {
-    @extend %compare-button;
-    background-color: #f5f6f9;
-    color: #bcbdc6;
-  }
-
-  .compare-button-en {
-    @extend %compare-button;
+    border-radius: 5px;
     background-color: #0073ea;
     color: white;
-  }
-}
 
-.reset-button {
-  position: absolute;
-  width: 486px;
-  height: 64px;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 153.5%;
-  text-align: center;
-  margin-top: 995px;
-  border: none;
-  border-radius: 4px;
-  background-color: #0073ea;
-  color: white;
+    &:hover {
+      background-color: #0060b9;
+    }
+  }
 }

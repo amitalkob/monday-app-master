@@ -27,9 +27,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="app-container">
       {!isCompare && (
-        <div className="app-container">
+        <div className="app">
           <p className="title">
             Compare two supposedly identical <br /> mobile screens to find
             differences
@@ -55,7 +55,7 @@ const App = () => {
       {isCompare && <CompareImages file1={file1} file2={file2} />}
       {isCompare && (
         <button className="reset-button" onClick={handleResetClick}>
-          Reset
+          Compare the next pair of screens
         </button>
       )}
     </div>

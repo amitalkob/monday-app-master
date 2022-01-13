@@ -32,6 +32,9 @@ const CompareImages = (props) => {
 
   const opacityDiv = (
     <div className="opacity">
+      <label htmlFor="opacity" className="opacity-label">
+        Designer's Version
+      </label>
       <input
         type="range"
         id="opacity"
@@ -40,8 +43,9 @@ const CompareImages = (props) => {
         max="100"
         onChange={handleOpacity}
       ></input>
-
-      <label htmlFor="opacity">Opacity</label>
+      <label htmlFor="opacity" className="opacity-label">
+        Developed Version
+      </label>
     </div>
   );
 
@@ -49,8 +53,7 @@ const CompareImages = (props) => {
     <AspectRatio
       ratio="1"
       style={{
-        maxWidth: "600px",
-        border: "1px solid",
+        border: "2px solid purple",
         opacity: props.isTop === true ? opacity / 100 : 1,
       }}
     >
@@ -60,14 +63,24 @@ const CompareImages = (props) => {
 
   return (
     <div className="compare-container">
-      <p></p>
+      <div className="title">
+        <p className="page-title">Designed page</p>
+        <p className="vs">Vs.</p>
+        <p className="page-title">Developed page</p>
+      </div>
       <p className="identity-title">Identity Level</p>
-      <p className="identity-num">{`${100.0 - result.misMatchPercentage}%`}</p>
+      <p
+        className={
+          result.misMatchPercentage <= 5
+            ? "identity-num-good"
+            : "identity-num-bad"
+        }
+      >{`${Math.round(100.0 - result.misMatchPercentage)}%`}</p>
       {opacityDiv}
       <Rnd
         default={{
-          x: 0,
-          y: 101,
+          x: 100,
+          y: 333,
         }}
         bounds="parent"
         dragAxis="none"

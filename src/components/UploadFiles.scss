@@ -1,19 +1,64 @@
 .drop-zones {
   width: 486px;
-  height: 156px;
-  gap: 24px;
 
-  .DropZone {
+  .drop-zone {
     border: 2px dashed #c5c7d0;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 66px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    padding-left: 39px;
 
-    padding: 0px;
+    &:hover {
+      background: #e6e9ef;
+    }
 
-    .upload-text {
-      color: #0073ea;
-      font-family: Roboto;
-      font-style: normal;
+    .drop-zone-inside {
+      display: flex;
+      flex-direction: row;
+      gap: 55px;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .up-text {
+        color: #0073ea;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 153.5%;
+      }
+    }
+  }
+}
+
+.drop-zone-in {
+  background: #bbdbc9;
+  border-radius: 4px;
+  height: 66px;
+  margin-bottom: 24px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+
+  .drop-zone-inside {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin-top: 6px;
+    }
+
+    .down-text {
       font-weight: normal;
-      font-size: 22px;
+      font-size: 24px;
+      color: #323338;
       line-height: 153.5%;
     }
   }
